@@ -1,0 +1,36 @@
+# ── Node & Build Artifacts ─────────────────────────────────────────────────
+node_modules
+npm-debug.log*
+yarn-error.log
+.npm
+
+# ── Build Output ───────────────────────────────────────────────────────────
+dist
+
+# ── Version Control ────────────────────────────────────────────────────────
+.git
+.gitignore
+
+# ── Docker ─────────────────────────────────────────────────────────────────
+Dockerfile
+.dockerignore
+
+# ── Editor & IDE ───────────────────────────────────────────────────────────
+.vscode
+.idea
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Docs / Text files ──────────────────────────────────────────────────────
+DeploymentGuide.txt
+FileDescription.txt
+README.md
+*.md
+
+# ── Environment & Secrets ──────────────────────────────────────────────────
+.env
+.env.*
+*.pem
+*.key
