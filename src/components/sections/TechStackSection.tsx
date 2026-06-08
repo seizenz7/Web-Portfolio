@@ -13,6 +13,8 @@ import { GitBranch, CloudCog, Container, ShieldCheck, Cpu, Terminal, Users, Acti
 interface TechItem {
   /** Name of the technology. */
   name: string
+  /** Proficiency level. */
+  level?: 'Expert' | 'Intermediate' | 'Learning'
 }
 
 /**
@@ -40,38 +42,38 @@ const TECH_CLUSTERS: TechCluster[] = [
     title: 'Containers & Orchestration',
     description: 'Containerized workloads, orchestration, and cloud-native deployments.',
     icon: <Container className="h-4 w-4" />,
-    items: [{ name: 'Docker' }, { name: 'Kubernetes' }],
+    items: [{ name: 'Docker', level: 'Intermediate' }, { name: 'Kubernetes', level: 'Intermediate' }],
   },
   {
     title: 'CI/CD & Automation',
     description: 'Continuous integration, delivery pipelines, and automated workflows.',
     icon: <GitBranch className="h-4 w-4" />,
-    items: [{ name: 'GitHub Actions' }, { name: 'GitLab CI' }, { name: 'Jenkins' }],
+    items: [{ name: 'Git', level: 'Intermediate' }, { name: 'GitHub Actions', level: 'Intermediate' }, { name: 'GitLab CI', level: 'Intermediate' }],
   },
   {
     title: 'Infrastructure as Code',
     description: 'Provisioning and configuration management through declarative code.',
     icon: <CloudCog className="h-4 w-4" />,
-    items: [{ name: 'Terraform' }, { name: 'Ansible' }],
+    items: [{ name: 'Terraform', level: 'Learning' }, { name: 'Ansible', level: 'Learning' }],
   },
   {
     title: 'Cloud Platforms',
     description: 'Public cloud services for compute, storage, and networking.',
     icon: <ShieldCheck className="h-4 w-4" />,
-    items: [{ name: 'AWS' }, { name: 'GCP' }, { name: 'Azure' }],
+    items: [{ name: 'AWS', level: 'Learning' }, { name: 'GCP', level: 'Learning' }],
   },
   {
     title: 'Scripting & OS',
     description: 'Systems administration, automation scripts, and runtime environments.',
     icon: <Terminal className="h-4 w-4" />,
-    items: [{ name: 'Linux' }, { name: 'Bash' }, { name: 'Python' }, { name: 'Git' }],
+    items: [{ name: 'Linux', level: 'Intermediate' }, { name: 'Bash', level: 'Intermediate' }, { name: 'Python', level: 'Intermediate' }],
   },
-  {
-    title: 'Monitoring & Observability',
-    description: 'Metrics collection, visualization, and alerting for system health.',
-    icon: <Activity className="h-4 w-4" />,
-    items: [{ name: 'Prometheus' }, { name: 'Grafana' }],
-  },
+  // {
+  //   title: 'Monitoring & Observability',
+  //   description: 'Metrics collection, visualization, and alerting for system health.',
+  //   icon: <Activity className="h-4 w-4" />,
+  //   items: [{ name: 'Prometheus' }, { name: 'Grafana' }],
+  // },
   {
     title: 'Soft Skills',
     description: 'Non-technical strengths that complement engineering work.',
@@ -143,11 +145,11 @@ const TechStackSection: React.FC = () => {
             </div>
 
             {/* Floating electric sparks */}
-            <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            {/* <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
               <div className="absolute left-5 top-5 h-1.5 w-1.5 rounded-full bg-cyan-300/90 shadow-[0_0_14px_rgba(56,189,248,0.9)] group-hover:animate-pulse" />
               <div className="absolute right-6 bottom-6 h-1.5 w-1.5 rounded-full bg-violet-300/90 shadow-[0_0_14px_rgba(168,85,247,0.9)] group-hover:animate-pulse" />
               <div className="absolute left-1/2 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-200/90 shadow-[0_0_20px_rgba(56,189,248,1)] group-hover:animate-pulse" />
-            </div>
+            </div> */}
 
             <div className="relative mb-3 flex items-center gap-2">
               <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-slate-900/80 text-cyan-300 shadow-inner shadow-cyan-500/40">
@@ -177,6 +179,15 @@ const TechStackSection: React.FC = () => {
                 >
                   <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.9)]" />
                   {item.name}
+                  {item.level && (
+                    <span className={`ml-1 text-[9px] uppercase tracking-wider ${
+                      item.level === 'Expert' ? 'text-amber-400' :
+                      item.level === 'Intermediate' ? 'text-blue-400' :
+                      'text-emerald-400'
+                    }`}>
+                      • {item.level}
+                    </span>
+                  )}
                 </motion.div>
               ))}
             </div>

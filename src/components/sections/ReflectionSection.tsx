@@ -26,7 +26,7 @@ const REFLECTIONS: ReflectionItem[] = [
     icon: <Target className="h-5 w-5" />,
     question: 'Biggest Challenge',
     answer:
-      'The biggest challenge in building this portfolio was translating DevOps technical skills—which mostly run in terminals and servers—into something visual and easy to understand. Crafting a narrative that demonstrates the problem-solving behind each pipeline and infrastructure configuration requires a different mindset from day-to-day engineering work.',
+      'The biggest challenge in building this portfolio was translating DevOps technical skills, which mostly run in terminals and servers into something visual and easy to understand. Crafting a narrative that demonstrates the problem-solving behind each pipeline and infrastructure configuration requires a different mindset from day-to-day engineering work.',
     accentColor: 'text-cyan-300',
     glowColor: 'shadow-cyan-500/40',
   },
@@ -58,7 +58,7 @@ const REFLECTIONS: ReflectionItem[] = [
     icon: <Award className="h-5 w-5" />,
     question: 'Why This Portfolio Matters',
     answer:
-      "This portfolio serves as tangible proof of my capabilities. While a resume only lists skills, a portfolio demonstrates how those skills are applied to solve real-world problems. As a fresh graduate without formal work experience, this portfolio bridges the gap between what I've learned in my homelab and industry requirements—showing that I am ready to contribute from day one.",
+      "This portfolio serves as tangible proof of my capabilities. While a resume only lists skills, a portfolio demonstrates how those skills are applied to solve real-world problems. As a fresh graduate without formal work experience, this portfolio bridges the gap between what I've learned in my homelab and industry requirements, showing that I am ready to contribute from day one.",
     accentColor: 'text-rose-300',
     glowColor: 'shadow-rose-500/40',
   },

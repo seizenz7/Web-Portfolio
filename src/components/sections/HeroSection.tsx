@@ -116,7 +116,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
             className="text-balance text-4xl font-bold text-galaxy-glitter pb-1 sm:text-5xl md:text-6xl"
             style={{ fontFamily: 'Space Grotesk, system-ui, sans-serif' }}
           >
-            Aditya Indra
+            Aditya Indra Wisnu
           </motion.h1>
           <div className="absolute inset-0 -z-10 blur-2xl opacity-20 bg-gradient-to-r from-cyan-500 via-purple-500 to-cyan-500 rounded-full transform scale-y-50" />
         </div>

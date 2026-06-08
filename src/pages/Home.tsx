@@ -39,17 +39,57 @@ const Home: React.FC = () => {
   const [pointer, setPointer] = useState<GalaxyPointer>({ x: 0, y: 0 })
 
   /**
-   * Track pointer movement to drive the galaxy parallax background.
+   * Track pointer drag to drive the galaxy parallax background.
    */
   useEffect(() => {
-    const handlePointerMove = (event: PointerEvent) => {
-      const x = (event.clientX / window.innerWidth) * 2 - 1
-      const y = (event.clientY / window.innerHeight) * 2 - 1
-      setPointer({ x, y })
+    let isDragging = false
+    let lastX = 0
+    let lastY = 0
+
+    const handlePointerDown = (e: PointerEvent) => {
+      // Ignore drags starting on buttons or links so we don't interfere with UI
+      const target = e.target as HTMLElement
+      if (target.closest('button') || target.closest('a')) return
+      
+      isDragging = true
+      lastX = e.clientX
+      lastY = e.clientY
     }
 
+    const handlePointerUp = () => {
+      isDragging = false
+    }
+
+    const handlePointerMove = (e: PointerEvent) => {
+      if (!isDragging) return
+      
+      const deltaX = e.clientX - lastX
+      const deltaY = e.clientY - lastY
+      
+      lastX = e.clientX
+      lastY = e.clientY
+
+      // Accumulate pointer state to rotate the galaxy
+      setPointer((prev) => ({
+        x: prev.x + (deltaX / window.innerWidth) * 5,
+        y: prev.y + (deltaY / window.innerHeight) * 5
+      }))
+    }
+
+    window.addEventListener('pointerdown', handlePointerDown)
+    window.addEventListener('pointerup', handlePointerUp)
     window.addEventListener('pointermove', handlePointerMove)
-    return () => window.removeEventListener('pointermove', handlePointerMove)
+    // Handle cases where pointer leaves window while dragging
+    window.addEventListener('pointercancel', handlePointerUp)
+    window.addEventListener('pointerleave', handlePointerUp)
+
+    return () => {
+      window.removeEventListener('pointerdown', handlePointerDown)
+      window.removeEventListener('pointerup', handlePointerUp)
+      window.removeEventListener('pointermove', handlePointerMove)
+      window.removeEventListener('pointercancel', handlePointerUp)
+      window.removeEventListener('pointerleave', handlePointerUp)
+    }
   }, [])
 
   /**
@@ -85,7 +125,7 @@ const Home: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50">
+    <div className="min-h-screen text-slate-50">
       {/* 3D galaxy / visual background */}
       <GalaxyBackground pointer={pointer} />
 
@@ -100,7 +140,7 @@ const Home: React.FC = () => {
               className="text-lg font-semibold text-slate-50 sm:text-xl"
               style={{ fontFamily: 'Space Grotesk, system-ui, sans-serif' }}
             >
-              Aditya Indra — DevOps Engineer
+              Aditya Indra Wisnu — DevOps Engineer
             </h1>
           </div>
           <div className="inline-flex items-center gap-2 rounded-full border border-slate-700/80 bg-slate-900/70 px-3 py-1 text-[11px] text-slate-300">

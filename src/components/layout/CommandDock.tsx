@@ -56,15 +56,15 @@ const DOCK_ITEMS: DockItem[] = [
     label: 'Projects', 
     icon: <Layers className="h-4 w-4" /> 
   },
-  { 
-    id: 'contact', 
-    label: 'Contact', 
-    icon: <Send className="h-4 w-4" /> 
-  },
   {
     id: 'reflection',
     label: 'Reflection',
     icon: <BookOpen className="h-4 w-4" />
+  },
+  { 
+    id: 'contact', 
+    label: 'Contact', 
+    icon: <Send className="h-4 w-4" /> 
   },
 ]
 

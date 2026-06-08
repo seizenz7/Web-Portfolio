@@ -26,12 +26,11 @@ logs/
 Thumbs.db
 
 # Editors & IDEs
-.vscode/*
+.vscode/
 !.vscode/extensions.json
 !.vscode/settings.json
 !.vscode/launch.json
 .idea/
 
-# Local Project Files
-DeploymentGuide.txt
-FileDescription.txt
+# TXT files
+*.txt

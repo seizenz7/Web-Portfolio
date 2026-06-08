@@ -50,17 +50,17 @@ const AboutSection: React.FC = () => {
             style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
           >
             <p>
-              Hi, I'm Aditya Indra — a fresh Informatics graduate and self-taught DevOps Engineering enthusiast.
-              My journey into the world of infrastructure started from pure curiosity: I built a homelab from scratch
+              Hi, I'm Aditya Indra Wisnu a fresh Informatics graduate and self-taught DevOps Engineering enthusiast.
+              My journey into the world of DevOps started from my curiosity. I joined an online course and Bootcamp
               to understand how real-world systems are deployed, monitored, and scaled. Without formal work experience,
-              I've relied on hands-on experimentation — spinning up Kubernetes clusters, designing CI/CD pipelines,
-              and automating infrastructure — to build practical skills that mirror industry demands.
+              I've relied on hands-on experimentation, spinning up Kubernetes clusters, designing CI/CD pipelines,
+              and automating infrastructure to build practical skills that mirror industry demands.
             </p>
             <p>
               I'm deeply passionate about CI/CD engineering, container orchestration, and Infrastructure as Code.
               My goal is to become a professional DevOps Engineer who bridges the gap between development and operations,
-              ensuring that software delivery is fast, secure, and repeatable. I believe that the best way to learn
-              is by building, breaking, and rebuilding.
+              ensuring that software delivery is fast, secure, and reliable. I believe that the best way to learn
+              is by building, breaking, and rebuilding. I am also highly interested in building smart systems integrated with AI.
             </p>
           </div>
         </motion.article>
@@ -88,8 +88,8 @@ const AboutSection: React.FC = () => {
             style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
           >
             My short-term goal is to land a Junior DevOps Engineer role where I can apply and expand my homelab
-            experience in a production environment. Long-term, I aspire to become a Cloud Architect — designing
-            resilient, scalable infrastructure that empowers development teams to ship with confidence.
+            experience in a production environment. Long-term, I aspire to become a DevOps Automation Architect,
+            focusing on advanced automation and AI integration to design resilient, scalable, smart and reliable infrastructure.
           </p>
         </motion.article>
 
@@ -115,10 +115,10 @@ const AboutSection: React.FC = () => {
             className="text-sm leading-relaxed text-slate-300"
             style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
           >
-            I'm fascinated by cloud-native architecture, GitOps workflows, and the entire DevSecOps ecosystem.
+            I'm fascinated by cloud-native architecture, GitOps workflows, and the integration of AI within the DevSecOps ecosystem.
             My philosophy is simple: "Automate the mundane, focus on the meaningful." When I'm not configuring
-            pipelines or debugging containers, you'll find me exploring open-source tools, experimenting in my
-            homelab, or reading about distributed systems.
+            pipelines or debugging something, you'll find me exploring open-source tools for DevOps and AIOps, experimenting in my
+            homelab, or reading about AI-driven distributed systems.
           </p>
         </motion.article>
 
@@ -144,7 +144,7 @@ const AboutSection: React.FC = () => {
             className="text-sm leading-relaxed text-slate-300"
             style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
           >
-            I hold a degree in Informatics, providing a rigorous foundation in algorithms and software architecture. To bridge the gap between academic theory and industry practice, I've dedicated myself to hands-on engineering through a custom homelab—treating it as a production environment to build real-world infrastructure and CI/CD pipelines.
+            I hold a degree in Informatics, providing a rigorous foundation in algorithms and software architecture. To bridge the gap between academic theory and industry practice, I joined specialized online courses and a DevOps bootcamp. Additionally, I've dedicated myself to hands-on engineering through a custom homelab—treating it as a production environment to build real-world infrastructure and CI/CD pipelines.
           </p>
         </motion.article>
 
