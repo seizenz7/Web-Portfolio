@@ -3,6 +3,8 @@ import { rimraf } from 'rimraf'
 import stylePlugin from 'esbuild-style-plugin'
 import autoprefixer from 'autoprefixer'
 import tailwindcss from 'tailwindcss'
+import fs from 'fs'
+import path from 'path'
 
 const args = process.argv.slice(2)
 const isProd = args[0] === '--production'
@@ -39,6 +41,19 @@ const esbuildOpts = {
 
 if (isProd) {
   await esbuild.build(esbuildOpts)
+
+  // Hapus script EventSource dev-server dari index.html hasil build
+  // Script ini hanya dibutuhkan saat development (hot reload)
+  const htmlPath = path.join('dist', 'index.html')
+  if (fs.existsSync(htmlPath)) {
+    let html = fs.readFileSync(htmlPath, 'utf8')
+    html = html.replace(
+      /\s*<script>\s*new EventSource\(['"]\/esbuild['"]\)[\s\S]*?<\/script>/g,
+      ''
+    )
+    fs.writeFileSync(htmlPath, html, 'utf8')
+    console.log('✓ Removed dev EventSource script from dist/index.html')
+  }
 } else {
   const ctx = await esbuild.context(esbuildOpts)
   await ctx.watch()

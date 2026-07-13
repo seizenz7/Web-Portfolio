@@ -144,7 +144,7 @@ const AboutSection: React.FC = () => {
             className="text-sm leading-relaxed text-slate-300"
             style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
           >
-            I hold a degree in Informatics, providing a rigorous foundation in algorithms and software architecture. To bridge the gap between academic theory and industry practice, I joined specialized online courses and a DevOps bootcamp. Additionally, I've dedicated myself to hands-on engineering through a custom homelab—treating it as a production environment to build real-world infrastructure and CI/CD pipelines.
+            I hold a degree in Informatics, providing a rigorous foundation in algorithms and software architecture. To bridge the gap between academic theory and industry practice, I joined specialized online courses and a DevOps bootcamp. Additionally, I've dedicated myself to hands-on engineering through a custom homelab, treating it as a production environment to build real-world infrastructure and CI/CD pipelines.
           </p>
         </motion.article>
 

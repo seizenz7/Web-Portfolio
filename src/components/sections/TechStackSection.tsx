@@ -14,7 +14,7 @@ interface TechItem {
   /** Name of the technology. */
   name: string
   /** Proficiency level. */
-  level?: 'Expert' | 'Intermediate' | 'Learning'
+  level?: 'Basic' | 'Intermediate' | 'Learning'
 }
 
 /**
@@ -48,7 +48,7 @@ const TECH_CLUSTERS: TechCluster[] = [
     title: 'CI/CD & Automation',
     description: 'Continuous integration, delivery pipelines, and automated workflows.',
     icon: <GitBranch className="h-4 w-4" />,
-    items: [{ name: 'Git', level: 'Intermediate' }, { name: 'GitHub Actions', level: 'Intermediate' }, { name: 'GitLab CI', level: 'Intermediate' }],
+    items: [{ name: 'Git', level: 'Intermediate' }, { name: 'GitHub Actions', level: 'Basic' }, { name: 'GitLab CI', level: 'Intermediate' }],
   },
   {
     title: 'Infrastructure as Code',
@@ -181,7 +181,7 @@ const TechStackSection: React.FC = () => {
                   {item.name}
                   {item.level && (
                     <span className={`ml-1 text-[9px] uppercase tracking-wider ${
-                      item.level === 'Expert' ? 'text-amber-400' :
+                      item.level === 'Learning' ? 'text-amber-400' :
                       item.level === 'Intermediate' ? 'text-blue-400' :
                       'text-emerald-400'
                     }`}>

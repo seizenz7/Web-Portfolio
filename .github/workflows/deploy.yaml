@@ -1,0 +1,69 @@
+---
+name: Deploy to GitHub Pages
+
+# Memicu workflow saat ada push ke branch main
+# Path diperluas agar mencakup semua file yang mempengaruhi hasil build
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - 'index.html'
+      - 'scripts/**'
+      - 'tailwind.config.js'
+      - 'tsconfig.json'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/deploy.yaml'
+  # Memungkinkan trigger manual dari tab Actions di GitHub
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy-pages.outputs.page_url }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read  # Izin untuk membaca konten repository
+      pages: write    # Izin untuk menulis ke GitHub Pages
+      id-token: write # Izin untuk OIDC token (autentikasi deploy)
+
+    steps:
+      # 1. Checkout seluruh repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Setup Node.js versi LTS
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm' # Cache node_modules berdasarkan package-lock.json
+
+      # 3. Install semua dependency
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. Build aplikasi untuk production menggunakan esbuild
+      # Script build.mjs --production akan minify output dan nonaktifkan sourcemap
+      - name: Build production bundle
+        run: npm run build
+
+      # 5. Setup GitHub Pages
+      # Catatan: script EventSource dev-server sudah otomatis dihapus
+      # oleh scripts/build.mjs saat mode --production
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # 7. Upload folder dist/ sebagai artifact Pages
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'dist'
+
+      # 8. Deploy ke GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deploy-pages
+        uses: actions/deploy-pages@v4

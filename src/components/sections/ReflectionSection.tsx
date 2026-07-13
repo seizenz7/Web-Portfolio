@@ -34,7 +34,7 @@ const REFLECTIONS: ReflectionItem[] = [
     icon: <Trophy className="h-5 w-5" />,
     question: 'Most Representative Project',
     answer:
-      "The CI/CD Pipeline Automation project best reflects who I am. It combines my passion for automation, attention to detail in configuration, and the drive to build reliable and repeatable deployment processes. Through this project, I learned that good infrastructure is the kind you don't have to think about—it just works.",
+      "The CI/CD Pipeline Automation project best reflects who I am. It combines my passion for automation, attention to detail in configuration, and the drive to build reliable and repeatable deployment processes. Through this project, I learned that good infrastructure is the kind you don't have to think about it just works.",
     accentColor: 'text-emerald-300',
     glowColor: 'shadow-emerald-500/40',
   },

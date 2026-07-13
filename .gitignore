@@ -32,5 +32,6 @@ Thumbs.db
 !.vscode/launch.json
 .idea/
 
-# TXT files
+# Miscellaneous
+*.swp
 *.txt
