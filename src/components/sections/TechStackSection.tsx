@@ -81,7 +81,9 @@ const TECH_CLUSTERS: TechCluster[] = [
     items: [
       { name: 'Problem Solving' },
       { name: 'Continuous Learning' },
-      { name: 'Communication & Teamwork' },
+      { name: 'Communicative' },
+      { name: 'Collaborative' },
+      { name: 'Adaptability' },
     ],
     hoverBorder: 'hover:border-emerald-400/70',
     hoverShadow: 'hover:shadow-[0_0_40px_rgba(52,211,153,0.55)]',
