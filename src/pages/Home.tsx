@@ -17,19 +17,8 @@ import {
   ContactSection,
   ReflectionSection,
 } from '../components/sections'
-
-/**
- * Human-readable labels for each section id.
- */
-const SECTION_LABELS: Record<SectionId, string> = {
-  home: 'Onboarding',
-  about: 'Identity',
-  stack: 'Skills & Tools',
-  experience: 'Personal Branding',
-  projects: 'Project Showcase',
-  contact: 'Contact & Links',
-  reflection: 'Reflection',
-}
+import { useLanguage } from '../contexts/LanguageContext'
+import { getTranslations } from '../locales'
 
 /**
  * Home component orchestrates the single-page layout and section navigation.
@@ -37,6 +26,8 @@ const SECTION_LABELS: Record<SectionId, string> = {
 const Home: React.FC = () => {
   const [activeSection, setActiveSection] = useState<SectionId>('home')
   const [pointer, setPointer] = useState<GalaxyPointer>({ x: 0, y: 0 })
+  const { language, toggleLanguage } = useLanguage()
+  const t = getTranslations(language)
 
   /**
    * Track pointer drag to drive the galaxy parallax background.
@@ -134,7 +125,7 @@ const Home: React.FC = () => {
         <header className="mb-6 flex flex-col gap-2 md:mb-8 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.26em] text-cyan-400/90">
-              Portfolio
+              {t.portfolioLabel}
             </p>
             <h1
               className="text-lg font-semibold text-slate-50 sm:text-xl"
@@ -143,10 +134,39 @@ const Home: React.FC = () => {
               Aditya Indra Wisnu — DevOps Engineer
             </h1>
           </div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-slate-700/80 bg-slate-900/70 px-3 py-1 text-[11px] text-slate-300">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.9)]" />
-            <span className="font-medium">Active panel:&nbsp;</span>
-            <span>{SECTION_LABELS[activeSection]}</span>
+
+          {/* Right side: active panel badge + language toggle */}
+          <div className="flex items-center gap-3">
+            <div className="inline-flex items-center gap-2 rounded-full border border-slate-700/80 bg-slate-900/70 px-3 py-1 text-[11px] text-slate-300">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.9)]" />
+              <span className="font-medium">{t.activePanel}:&nbsp;</span>
+              <span>{t.sectionLabels[activeSection]}</span>
+            </div>
+
+            {/* Language Toggle Button */}
+            <motion.button
+              type="button"
+              onClick={toggleLanguage}
+              aria-label={language === 'id' ? 'Switch to English' : 'Ganti ke Bahasa Indonesia'}
+              className="relative inline-flex items-center gap-1.5 overflow-hidden rounded-full border border-cyan-500/30 bg-slate-900/80 px-3 py-1 text-[11px] font-semibold text-slate-200 shadow-[0_0_18px_rgba(34,211,238,0.15)] backdrop-blur transition-all hover:border-cyan-400/60 hover:shadow-[0_0_24px_rgba(34,211,238,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {/* Sliding active indicator */}
+              <motion.span
+                className="absolute inset-y-0 rounded-full bg-gradient-to-r from-cyan-500/30 to-emerald-500/30"
+                layoutId="langBg"
+                style={{ width: '50%', left: language === 'id' ? 0 : '50%' }}
+                transition={{ type: 'spring', stiffness: 300, damping: 28 }}
+              />
+              <span className={`relative z-10 transition-colors ${language === 'id' ? 'text-cyan-300' : 'text-slate-400'}`}>
+                🇮🇩 ID
+              </span>
+              <span className="relative z-10 text-slate-600">/</span>
+              <span className={`relative z-10 transition-colors ${language === 'en' ? 'text-cyan-300' : 'text-slate-400'}`}>
+                EN 🇬🇧
+              </span>
+            </motion.button>
           </div>
         </header>
 

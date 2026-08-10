@@ -1,28 +1,29 @@
+/**
+ * AboutSection — bilingual via LanguageContext.
+ */
 import React from 'react'
 import { motion } from 'motion/react'
-import { Terminal, User, Coffee, Target, GraduationCap, Code2 } from 'lucide-react'
+import { Terminal, User, Target, GraduationCap, Code2 } from 'lucide-react'
+import { useLanguage } from '../../contexts/LanguageContext'
+import { getTranslations } from '../../locales'
 
-/**
- * AboutSection renders a brief overview of the developer.
- */
 const AboutSection: React.FC = () => {
+  const { language } = useLanguage()
+  const t = getTranslations(language)
+  const a = t.about
+
   return (
     <section aria-label="About Me" className="flex flex-1 flex-col">
       <header className="mb-6 space-y-2 md:mb-8">
         <p className="text-xs font-semibold uppercase tracking-[0.26em] text-cyan-400/90">
-          About Me
+          {a.sectionTag}
         </p>
         <h2
           className="text-xl font-semibold text-slate-50 sm:text-2xl md:text-3xl"
           style={{ fontFamily: 'Space Grotesk, system-ui, sans-serif' }}
         >
-          The Engineer behind the project.
+          {a.sectionTitle}
         </h2>
-        <p
-          className="max-w-2xl text-sm text-slate-300"
-          style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-        >
-        </p>
       </header>
 
       <div className="grid gap-6 md:grid-cols-2">
@@ -42,26 +43,16 @@ const AboutSection: React.FC = () => {
               className="text-lg font-semibold text-slate-50"
               style={{ fontFamily: 'Space Grotesk, system-ui, sans-serif' }}
             >
-              Who I Am
+              {a.cards.whoIAm.title}
             </h3>
           </div>
           <div
             className="space-y-4 text-sm leading-relaxed text-slate-300"
             style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
           >
-            <p>
-              Hi, I'm Aditya Indra Wisnu a fresh Informatics graduate and self-taught DevOps Engineering enthusiast.
-              My journey into the world of DevOps started from my curiosity. I joined an online course and Bootcamp
-              to understand how real-world systems are deployed, monitored, and scaled. Without formal work experience,
-              I've relied on hands-on experimentation, spinning up Kubernetes clusters, designing CI/CD pipelines,
-              and automating infrastructure to build practical skills that mirror industry demands.
-            </p>
-            <p>
-              I'm deeply passionate about CI/CD engineering, container orchestration, and Infrastructure as Code.
-              My goal is to become a professional DevOps Engineer who bridges the gap between development and operations,
-              ensuring that software delivery is fast, secure, and reliable. I believe that the best way to learn
-              is by building, breaking, and rebuilding. I am also highly interested in building smart systems integrated with AI.
-            </p>
+            {a.cards.whoIAm.body.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
           </div>
         </motion.article>
 
@@ -80,16 +71,14 @@ const AboutSection: React.FC = () => {
               className="text-lg font-semibold text-slate-50"
               style={{ fontFamily: 'Space Grotesk, system-ui, sans-serif' }}
             >
-              Career Goals
+              {a.cards.careerGoals.title}
             </h3>
           </div>
           <p
             className="text-sm leading-relaxed text-slate-300"
             style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
           >
-            My short-term goal is to land a Junior DevOps Engineer role where I can apply and expand my homelab
-            experience in a production environment. Long-term, I aspire to become a DevOps Automation Architect,
-            focusing on advanced automation and AI integration to design resilient, scalable, smart and reliable infrastructure.
+            {a.cards.careerGoals.body}
           </p>
         </motion.article>
 
@@ -108,17 +97,14 @@ const AboutSection: React.FC = () => {
               className="text-lg font-semibold text-slate-50"
               style={{ fontFamily: 'Space Grotesk, system-ui, sans-serif' }}
             >
-              Interests & Philosophy
+              {a.cards.interests.title}
             </h3>
           </div>
           <p
             className="text-sm leading-relaxed text-slate-300"
             style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
           >
-            I'm fascinated by cloud-native architecture, GitOps workflows, and the integration of AI within the DevSecOps ecosystem.
-            My philosophy is simple: "Automate the mundane, focus on the meaningful." When I'm not configuring
-            pipelines or debugging something, you'll find me exploring open-source tools for DevOps and AIOps, experimenting in my
-            homelab, or reading about AI-driven distributed systems.
+            {a.cards.interests.body}
           </p>
         </motion.article>
 
@@ -137,14 +123,14 @@ const AboutSection: React.FC = () => {
               className="text-lg font-semibold text-slate-50"
               style={{ fontFamily: 'Space Grotesk, system-ui, sans-serif' }}
             >
-              Background & Experience
+              {a.cards.background.title}
             </h3>
           </div>
           <p
             className="text-sm leading-relaxed text-slate-300"
             style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
           >
-            I hold a degree in Informatics, providing a rigorous foundation in algorithms and software architecture. To bridge the gap between academic theory and industry practice, I joined specialized online courses and a DevOps bootcamp. Additionally, I've dedicated myself to hands-on engineering through a custom homelab, treating it as a production environment to build real-world infrastructure and CI/CD pipelines.
+            {a.cards.background.body}
           </p>
         </motion.article>
 
@@ -163,7 +149,7 @@ const AboutSection: React.FC = () => {
               className="text-lg font-semibold text-slate-50"
               style={{ fontFamily: 'Space Grotesk, system-ui, sans-serif' }}
             >
-              Core Technical Skills
+              {a.cards.coreSkills.title}
             </h3>
           </div>
           <ul

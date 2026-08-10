@@ -1,13 +1,15 @@
 /**
  * Hero section — professional onboarding landing page for the portfolio.
  * Welcomes visitors and guides them to explore the portfolio sections.
- * Personal bio details are intentionally omitted (handled by AboutSection).
+ * Text content is bilingual via LanguageContext.
  */
 
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Fingerprint, Layers, Sparkles } from 'lucide-react'
 import type { SectionId } from '../../types/sections'
+import { useLanguage } from '../../contexts/LanguageContext'
+import { getTranslations } from '../../locales'
 
 /**
  * Props for HeroSection.
@@ -17,35 +19,18 @@ export interface HeroSectionProps {
   onNavigate: (section: SectionId) => void
 }
 
-/**
- * Quick-access card shown below the headline to guide visitors.
- */
-interface QuickNavCard {
-  label: string
-  description: string
-  target: SectionId
-  icon: React.ReactNode
-  /** Pre-built Tailwind classes to avoid JIT purge issues with dynamic colors. */
-  iconWrapClass: string
-  hoverBorderClass: string
-  accentTextClass: string
-}
-
-const QUICK_NAV: QuickNavCard[] = [
+const QUICK_NAV_TARGETS: SectionId[] = ['experience', 'projects']
+const QUICK_NAV_ICONS = [
+  <Fingerprint className="h-4 w-4" />,
+  <Layers className="h-4 w-4" />,
+]
+const QUICK_NAV_STYLES = [
   {
-    label: 'Personal Branding',
-    description: 'Career direction, skills, and values at a glance.',
-    target: 'experience',
-    icon: <Fingerprint className="h-4 w-4" />,
     iconWrapClass: 'bg-cyan-500/15 text-cyan-400',
     hoverBorderClass: 'hover:border-cyan-500/50',
     accentTextClass: 'text-cyan-400',
   },
   {
-    label: 'Project Showcase',
-    description: 'Real-world projects built with modern DevOps tooling.',
-    target: 'projects',
-    icon: <Layers className="h-4 w-4" />,
     iconWrapClass: 'bg-violet-500/15 text-violet-400',
     hoverBorderClass: 'hover:border-violet-500/50',
     accentTextClass: 'text-violet-400',
@@ -57,6 +42,10 @@ const QUICK_NAV: QuickNavCard[] = [
  * a brief value proposition, and quick-nav cards to guide exploration.
  */
 const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
+  const { language } = useLanguage()
+  const t = getTranslations(language)
+  const h = t.hero
+
   return (
     <section
       aria-label="Welcome — Aditya Indra's DevOps Portfolio"
@@ -96,7 +85,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
           </span>
-          <span>Open to Opportunities</span>
+          <span>{h.statusBadge}</span>
         </div>
 
         {/* Greeting */}
@@ -107,7 +96,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.15 }}
         >
-          Welcome to the portfolio of
+          {h.greeting}
         </motion.p>
 
         {/* Name + Title */}
@@ -128,7 +117,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          DevOps Engineer
+          {h.title}
         </motion.p>
 
         {/* Tagline */}
@@ -139,8 +128,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          Building reliable infrastructure through automation, containers, and
-          continuous delivery — explore the projects, skills, and my personal branding.
+          {h.tagline}
         </motion.p>
 
         {/* Quick Nav Cards */}
@@ -150,32 +138,36 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.4 }}
         >
-          {QUICK_NAV.map((card) => (
-            <motion.button
-              key={card.target}
-              type="button"
-              onClick={() => onNavigate(card.target)}
-              className={`group flex flex-col items-start gap-2 rounded-2xl border border-slate-700/60 bg-slate-900/60 p-4 text-left backdrop-blur transition-colors ${card.hoverBorderClass}`}
-              whileHover={{ y: -2, scale: 1.01 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <div className={`flex h-8 w-8 items-center justify-center rounded-lg ${card.iconWrapClass}`}>
-                {card.icon}
-              </div>
-              <span
-                className="text-sm font-semibold text-slate-100"
-                style={{ fontFamily: 'Space Grotesk, system-ui, sans-serif' }}
+          {h.quickNav.map((card, idx) => {
+            const style = QUICK_NAV_STYLES[idx]
+            const target = QUICK_NAV_TARGETS[idx]
+            return (
+              <motion.button
+                key={target}
+                type="button"
+                onClick={() => onNavigate(target)}
+                className={`group flex flex-col items-start gap-2 rounded-2xl border border-slate-700/60 bg-slate-900/60 p-4 text-left backdrop-blur transition-colors ${style.hoverBorderClass}`}
+                whileHover={{ y: -2, scale: 1.01 }}
+                whileTap={{ scale: 0.98 }}
               >
-                {card.label}
-              </span>
-              <span className="text-xs leading-relaxed text-slate-400">
-                {card.description}
-              </span>
-              <span className={`mt-auto inline-flex items-center gap-1 text-[11px] font-medium ${card.accentTextClass} opacity-0 transition-opacity group-hover:opacity-100`}>
-                Explore <ArrowRight className="h-3 w-3" />
-              </span>
-            </motion.button>
-          ))}
+                <div className={`flex h-8 w-8 items-center justify-center rounded-lg ${style.iconWrapClass}`}>
+                  {QUICK_NAV_ICONS[idx]}
+                </div>
+                <span
+                  className="text-sm font-semibold text-slate-100"
+                  style={{ fontFamily: 'Space Grotesk, system-ui, sans-serif' }}
+                >
+                  {card.label}
+                </span>
+                <span className="text-xs leading-relaxed text-slate-400">
+                  {card.description}
+                </span>
+                <span className={`mt-auto inline-flex items-center gap-1 text-[11px] font-medium ${style.accentTextClass} opacity-0 transition-opacity group-hover:opacity-100`}>
+                  {h.exploreLink} <ArrowRight className="h-3 w-3" />
+                </span>
+              </motion.button>
+            )
+          })}
         </motion.div>
 
         {/* Primary CTA */}
@@ -193,7 +185,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
             whileTap={{ scale: 0.97 }}
           >
             <Sparkles className="h-4 w-4" />
-            <span>Start Exploring</span>
+            <span>{h.ctaExplore}</span>
           </motion.button>
 
           <motion.button
@@ -203,7 +195,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
             whileHover={{ y: -1, scale: 1.01 }}
             whileTap={{ scale: 0.97 }}
           >
-            <span>Get in Touch</span>
+            <span>{h.ctaContact}</span>
             <ArrowRight className="h-4 w-4" />
           </motion.button>
         </motion.div>

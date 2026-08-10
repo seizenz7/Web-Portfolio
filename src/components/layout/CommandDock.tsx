@@ -1,12 +1,15 @@
 /**
  * Floating glassmorphism "Command Center" dock.
  * Provides persistent navigation between sections using icons and labels.
+ * Labels are bilingual (EN/ID) via LanguageContext.
  */
 
 import React from 'react'
-import { motion } from 'framer-motion' // Gunakan 'framer-motion' agar lebih stabil
+import { motion } from 'framer-motion'
 import { Home, Fingerprint, User, Orbit, Layers, Send, BookOpen } from 'lucide-react'
 import type { SectionId } from '../../types/sections'
+import { useLanguage } from '../../contexts/LanguageContext'
+import { getTranslations } from '../../locales'
 
 /**
  * Props for the CommandDock component.
@@ -23,49 +26,20 @@ export interface CommandDockProps {
  */
 interface DockItem {
   id: SectionId
-  label: string
   icon: React.ReactNode
 }
 
 /**
- * List of navigation items shown in the dock.
+ * Static dock items (icons only — labels come from translations).
  */
 const DOCK_ITEMS: DockItem[] = [
-  { 
-    id: 'home', 
-    label: 'Home', 
-    icon: <Home className="h-4 w-4" /> 
-  },
-  { 
-    id: 'experience', 
-    label: 'Branding', 
-    icon: <Fingerprint className="h-4 w-4" /> 
-  },
-  {
-    id: 'about',
-    label: 'About',
-    icon: <User className="h-4 w-4" />
-  },
-  { 
-    id: 'stack', 
-    label: 'Skills & Tools', 
-    icon: <Orbit className="h-4 w-4" /> 
-  },
-  { 
-    id: 'projects', 
-    label: 'Projects', 
-    icon: <Layers className="h-4 w-4" /> 
-  },
-  {
-    id: 'reflection',
-    label: 'Reflection',
-    icon: <BookOpen className="h-4 w-4" />
-  },
-  { 
-    id: 'contact', 
-    label: 'Contact', 
-    icon: <Send className="h-4 w-4" /> 
-  },
+  { id: 'home',       icon: <Home className="h-4 w-4" /> },
+  { id: 'experience', icon: <Fingerprint className="h-4 w-4" /> },
+  { id: 'about',      icon: <User className="h-4 w-4" /> },
+  { id: 'stack',      icon: <Orbit className="h-4 w-4" /> },
+  { id: 'projects',   icon: <Layers className="h-4 w-4" /> },
+  { id: 'reflection', icon: <BookOpen className="h-4 w-4" /> },
+  { id: 'contact',    icon: <Send className="h-4 w-4" /> },
 ]
 
 /**
@@ -73,6 +47,9 @@ const DOCK_ITEMS: DockItem[] = [
  * of the viewport, with glowing accents and icon-based section controls.
  */
 const CommandDock: React.FC<CommandDockProps> = ({ activeSection, onNavigate }) => {
+  const { language } = useLanguage()
+  const t = getTranslations(language)
+
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-4 z-50 flex justify-center px-4 md:bottom-8">
       <motion.nav
@@ -84,6 +61,7 @@ const CommandDock: React.FC<CommandDockProps> = ({ activeSection, onNavigate }) 
       >
         {DOCK_ITEMS.map((item) => {
           const isActive = item.id === activeSection
+          const label = t.dock[item.id]
 
           return (
             <motion.button
@@ -95,7 +73,7 @@ const CommandDock: React.FC<CommandDockProps> = ({ activeSection, onNavigate }) 
                   ? 'text-cyan-100'
                   : 'text-slate-400 hover:text-cyan-100 focus-visible:text-cyan-100'
               }`}
-              aria-label={item.label}
+              aria-label={label}
               aria-current={isActive ? 'page' : undefined}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.96 }}
@@ -112,7 +90,7 @@ const CommandDock: React.FC<CommandDockProps> = ({ activeSection, onNavigate }) 
               }`}>
                 {item.icon}
               </span>
-              <span className="hidden whitespace-nowrap md:inline-block">{item.label}</span>
+              <span className="hidden whitespace-nowrap md:inline-block">{label}</span>
             </motion.button>
           )
         })}

@@ -1,11 +1,12 @@
 /**
- * Contact section & Social Links.
- * Provides direct links to email, LinkedIn, GitHub, and GitLab.
+ * Contact section & Social Links — bilingual via LanguageContext.
  */
 
 import React from 'react'
 import { motion } from 'motion/react'
 import { Mail, Linkedin, Github, Gitlab, ArrowUpRight } from 'lucide-react'
+import { useLanguage } from '../../contexts/LanguageContext'
+import { getTranslations } from '../../locales'
 
 const CONTACT_LINKS = [
   {
@@ -14,7 +15,7 @@ const CONTACT_LINKS = [
     displayValue: 'adityaiw4@gmail.com',
     icon: <Mail className="h-5 w-5" />,
     color: 'hover:border-rose-400/70 hover:shadow-rose-500/20 text-rose-300',
-    bgIcon: 'bg-rose-500/10 text-rose-400'
+    bgIcon: 'bg-rose-500/10 text-rose-400',
   },
   {
     name: 'LinkedIn',
@@ -22,7 +23,7 @@ const CONTACT_LINKS = [
     displayValue: 'linkedin.com/in/adityaiw4',
     icon: <Linkedin className="h-5 w-5" />,
     color: 'hover:border-blue-400/70 hover:shadow-blue-500/20 text-blue-300',
-    bgIcon: 'bg-blue-500/10 text-blue-400'
+    bgIcon: 'bg-blue-500/10 text-blue-400',
   },
   {
     name: 'GitHub',
@@ -30,7 +31,7 @@ const CONTACT_LINKS = [
     displayValue: 'github.com/seizenz7',
     icon: <Github className="h-5 w-5" />,
     color: 'hover:border-slate-300/70 hover:shadow-slate-300/20 text-slate-200',
-    bgIcon: 'bg-slate-500/10 text-slate-300'
+    bgIcon: 'bg-slate-500/10 text-slate-300',
   },
   {
     name: 'GitLab',
@@ -38,30 +39,33 @@ const CONTACT_LINKS = [
     displayValue: 'gitlab.com/seizenz',
     icon: <Gitlab className="h-5 w-5" />,
     color: 'hover:border-orange-400/70 hover:shadow-orange-500/20 text-orange-300',
-    bgIcon: 'bg-orange-500/10 text-orange-400'
-  }
+    bgIcon: 'bg-orange-500/10 text-orange-400',
+  },
 ]
 
 const ContactSection: React.FC = () => {
+  const { language } = useLanguage()
+  const t = getTranslations(language)
+  const c = t.contact
+
   return (
     <section aria-label="Contact & Links" className="flex flex-1 flex-col items-center justify-center">
       <div className="w-full max-w-2xl text-center">
         <header className="mb-10 space-y-4">
           <p className="text-xs font-semibold uppercase tracking-[0.26em] text-cyan-400/90">
-            Contact
+            {c.sectionTag}
           </p>
           <h2
             className="text-3xl font-bold text-slate-50 md:text-4xl"
             style={{ fontFamily: 'Space Grotesk, system-ui, sans-serif' }}
           >
-            Let's build something together.
+            {c.sectionTitle}
           </h2>
           <p
             className="mx-auto max-w-lg text-sm text-slate-300 md:text-base"
             style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
           >
-            Whether you have a question, a project idea, or just want to connect 
-            and talk about infrastructure and automation, my inbox is always open.
+            {c.sectionDescription}
           </p>
         </header>
 
