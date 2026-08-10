@@ -42,13 +42,13 @@ const TECH_CLUSTERS: TechCluster[] = [
     title: 'Containers & Orchestration',
     description: 'Containerized workloads, orchestration, and cloud-native deployments.',
     icon: <Container className="h-4 w-4" />,
-    items: [{ name: 'Docker', level: 'Intermediate' }, { name: 'Kubernetes', level: 'Intermediate' }],
+    items: [{ name: 'Docker', level: 'Intermediate' }, { name: 'Kubernetes', level: 'Basic' }],
   },
   {
     title: 'CI/CD & Automation',
     description: 'Continuous integration, delivery pipelines, and automated workflows.',
     icon: <GitBranch className="h-4 w-4" />,
-    items: [{ name: 'Git', level: 'Intermediate' }, { name: 'GitHub Actions', level: 'Basic' }, { name: 'GitLab CI', level: 'Intermediate' }],
+    items: [{ name: 'Git', level: 'Basic' }, { name: 'GitHub Actions', level: 'Basic' }, { name: 'GitLab CI', level: 'Intermediate' }],
   },
   {
     title: 'Infrastructure as Code',
@@ -66,7 +66,7 @@ const TECH_CLUSTERS: TechCluster[] = [
     title: 'Scripting & OS',
     description: 'Systems administration, automation scripts, and runtime environments.',
     icon: <Terminal className="h-4 w-4" />,
-    items: [{ name: 'Linux', level: 'Intermediate' }, { name: 'Bash', level: 'Intermediate' }, { name: 'Python', level: 'Intermediate' }],
+    items: [{ name: 'Linux', level: 'Intermediate' }, { name: 'Bash', level: 'Basic' }, { name: 'Python', level: 'Basic' }],
   },
   // {
   //   title: 'Monitoring & Observability',
