@@ -238,7 +238,7 @@ export const id: Translations = {
       },
       {
         background:
-          'Di lingkungan keuangan yang diatur ketat, taruhannya memang berbeda. Satu deployment yang tidak konsisten atau satu celah keamanan yang terlewat, dan dampaknya bisa nyata. Saya bergabung dalam proyek ini untuk membangun fondasi DevOps yang layak bagi platform CBS yang sudah berkembang jadi ekosistem microservices. Tim menggunakan stack yang berbeda-beda (Go, Java, Node.js, frontend) tanpa standar bersama untuk cara membangun, mengirimkan, atau memantau layanan. Itu yang perlu dibenahi.',
+          'Core Banking Syariah (CBS) adalah sistem perbankan inti yang mengelola transaksi keuangan sensitif. Domain ini menuntut standar teknis yang ketat: zero downtime saat deployment, auditabilitas penuh pada setiap rilis, keamanan berlapis (shift-left security), dan konsistensi lintas lingkungan (DEV, UAT, PROD). Saya merancang dan membangun proyek mandiri ini untuk memenuhi tuntutan tingkat enterprise tersebut pada ekosistem microservices (Go, Java, Node.js, frontend) yang kompleks.',
         problem:
           'Deployment microservices sebelumnya cukup kompleks dan terpecah karena setiap layanan memakai teknologi yang berbeda. Hal ini menyulitkan standarisasi dan mengganggu konsistensi. Pipeline pengiriman juga belum terpusat, yang menyulitkan pengawasan keamanan maupun proses persetujuan rilis. Selain itu, pemantauan dan log belum menyatu, sehingga memperlambat tim saat harus mencari akar masalah.',
         role: 'DevOps Engineer: Merancang dan mengimplementasikan arsitektur DevOps end-to-end untuk deployment microservices CBS, dengan fokus pada otomatisasi proses delivery, standardisasi deployment, dan pembangunan observability yang komprehensif.',

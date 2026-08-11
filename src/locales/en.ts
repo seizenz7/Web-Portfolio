@@ -235,7 +235,7 @@ export const en = {
       },
       {
         background:
-          'In a regulated financial environment, the stakes are concrete. One inconsistent deployment or one overlooked security gap and you feel it. I joined this project to build a real DevOps foundation for a Core Banking Syariah (CBS) platform that had grown into a full microservices ecosystem. Teams were using different stacks (Go, Java, Node.js, frontend) with no shared standard for how things got built, shipped, or monitored. That was the gap I came in to close.',
+          'Core Banking Syariah (CBS) is a core banking system handling highly sensitive financial transactions. This domain demands strict technical standards: zero-downtime deployments, full auditability for every release, shift-left security layers, and absolute consistency across multiple environments (DEV, UAT, PROD). I independently architected and built this project to meet these rigorous enterprise demands within a complex microservices ecosystem (Go, Java, Node.js, frontend).',
         problem:
           'Microservice deployments were fragmented across different tech stacks and build methods, making standardization difficult. Delivery pipelines lacked centralization for security checks and release governance, while ununified logs and metrics slowed down troubleshooting.',
         role: 'DevOps Engineer: Designed and implemented the end-to-end DevOps architecture for CBS microservices with a focus on automation, standardization, and observability.',
