@@ -180,25 +180,14 @@ export const en = {
     items: [
       {
         background:
-          'In a regulated financial environment, the stakes are concrete. One inconsistent deployment or one overlooked security gap and you feel it. I joined this project to build a real DevOps foundation for a Core Banking Syariah (CBS) platform that had grown into a full microservices ecosystem. Teams were using different stacks (Go, Java, Node.js, frontend) with no shared standard for how things got built, shipped, or monitored. That was the gap I came in to close.',
+          'Early on, I ran into the classic "it works on my machine" problem firsthand. The app ran fine locally but crashed in another environment because the database was not ready when the app started. It was frustrating, and honestly a bit embarrassing. I built this project to actually understand Docker properly, not just the basics, but what it takes to make a containerized setup reliable in production. I picked a real scenario: a Python web service with a PostgreSQL backend, and worked through every edge case until it ran clean.',
         problem:
-          'Microservice deployments were fragmented across different tech stacks and build methods, making standardization difficult. Delivery pipelines lacked centralization for security checks and release governance, while ununified logs and metrics slowed down troubleshooting.',
-        role: 'DevOps Engineer: Designed and implemented the end-to-end DevOps architecture for CBS microservices with a focus on automation, standardization, and observability.',
+          'Problems like "it works on my machine" and race conditions during boot often lead to failed deployments and unexpected downtime.',
+        role: 'DevOps Engineer: Designed the containerization strategy, implemented security practices, and set up Docker Compose orchestration.',
         solution:
-          'I standardized container packaging across Go, Java, Node.js, and frontend apps with secure Docker builds, then built a centralized GitLab CI/CD pipeline with SAST, image scanning, and release approval gates. I adopted a GitOps workflow with Helm charts for Kubernetes deployments, and configured observability tools using Prometheus, Grafana, Loki, OpenTelemetry, and Grafana Beyla for unified metrics and logging.',
+          'I wrote a production-ready Dockerfile using a non-root user to minimize image size and harden security. Using Docker Compose, I set up healthchecks (`pg_isready`) so the app waits for the database to be ready before starting. Configurations and credentials were separated using `.env` files and isolated bridge networks.',
         result:
-          'Before this, deploying a new version of one service could take most of a day, involve several people, and still result in something being out of sync. After the full CI/CD and GitOps setup, releases went from ad-hoc manual handoffs to automated, reviewed, and auditable deploys. Manual deployment effort dropped by 60%, release cycles sped up by 35%, and the observability stack that provides high visibility and streamlines root cause identification, enabling faster and more efficient incident resolution while reducing Mean Time to Resolution (MTTR) by nearly 50%',
-      },
-      {
-        background:
-          'The codebase had grown into several microservices (frontend, API gateway, auth, analytics) and at some point the deployment process had become the weakest part of the whole system. Everyone pushed changes differently. There was no consistent versioning, no single source of truth. The cluster was always a manual hotfix away from drifting out of sync with what was in Git. I knew we needed to stop relying on the pipeline to push things and start letting Git determine what runs in production.',
-        problem:
-          'Push-based CI/CD pipelines require direct write permissions to Kubernetes clusters, creating security risks. Direct manual hotfixes in live clusters also cause configuration drift, making Git history out of sync with what is running in production.',
-        role: 'DevOps Engineer: Designed a centralized CI/CD pipeline, authored Helm charts, and implemented pull-based GitOps with ArgoCD for continuous sync and self-healing.',
-        solution:
-          'I created a DRY pipeline in GitLab CI/CD with Semantic Release for automated versioning. Instead of pushing to the cluster, ArgoCD monitors a dedicated GitOps repo containing our Helm charts. ArgoCD uses Auto-Sync and Self-Heal to keep the Kubernetes cluster in sync with Git at all times.',
-        result:
-          'Switching to pull-based deployment revoked 100% of the CI pipeline\'s write permissions to the cluster, closing a critical attack vector. ArgoCD\'s Self-Heal eliminated 100% of configuration drift by reverting unauthorized direct cluster edits within seconds, while reducing mean time to recovery (MTTR) by 80% because of instant rollback feature.',
+          'The app now starts reliably in both local and production environments. Race conditions during boot are gone because the database has to pass a healthcheck before the app comes up. Secrets and config stay out of the image entirely, managed through `.env` files and isolated networks.',
       },
       {
         background:
@@ -224,6 +213,17 @@ export const en = {
       },
       {
         background:
+          'The codebase had grown into several microservices (frontend, API gateway, auth, analytics) and at some point the deployment process had become the weakest part of the whole system. Everyone pushed changes differently. There was no consistent versioning, no single source of truth. The cluster was always a manual hotfix away from drifting out of sync with what was in Git. I knew we needed to stop relying on the pipeline to push things and start letting Git determine what runs in production.',
+        problem:
+          'Push-based CI/CD pipelines require direct write permissions to Kubernetes clusters, creating security risks. Direct manual hotfixes in live clusters also cause configuration drift, making Git history out of sync with what is running in production.',
+        role: 'DevOps Engineer: Designed a centralized CI/CD pipeline, authored Helm charts, and implemented pull-based GitOps with ArgoCD for continuous sync and self-healing.',
+        solution:
+          'I created a DRY pipeline in GitLab CI/CD with Semantic Release for automated versioning. Instead of pushing to the cluster, ArgoCD monitors a dedicated GitOps repo containing our Helm charts. ArgoCD uses Auto-Sync and Self-Heal to keep the Kubernetes cluster in sync with Git at all times.',
+        result:
+          'Switching to pull-based deployment revoked 100% of the CI pipeline\'s write permissions to the cluster, closing a critical attack vector. ArgoCD\'s Self-Heal eliminated 100% of configuration drift by reverting unauthorized direct cluster edits within seconds, while reducing mean time to recovery (MTTR) by 80% because of instant rollback feature.',
+      },
+      {
+        background:
           'Setting things up manually in GCP felt fine at first, until I had to do it again. Every time I repeated the process for a new environment or after an incident, the result was slightly different from the last. I started wondering how anyone could guarantee consistency across environments without code. So I rebuilt the entire setup in Terraform, split across modules for networking, compute, and storage. Reproducing the full environment now takes a single command.',
         problem:
           'Manual cloud provisioning lacks an audit trail and cannot be peer-reviewed. Undocumented changes lead to configuration drift between staging and production environments, making scaling unreliable.',
@@ -235,14 +235,14 @@ export const en = {
       },
       {
         background:
-          'Early on, I ran into the classic "it works on my machine" problem firsthand. The app ran fine locally but crashed in another environment because the database was not ready when the app started. It was frustrating, and honestly a bit embarrassing. I built this project to actually understand Docker properly, not just the basics, but what it takes to make a containerized setup reliable in production. I picked a real scenario: a Python web service with a PostgreSQL backend, and worked through every edge case until it ran clean.',
+          'In a regulated financial environment, the stakes are concrete. One inconsistent deployment or one overlooked security gap and you feel it. I joined this project to build a real DevOps foundation for a Core Banking Syariah (CBS) platform that had grown into a full microservices ecosystem. Teams were using different stacks (Go, Java, Node.js, frontend) with no shared standard for how things got built, shipped, or monitored. That was the gap I came in to close.',
         problem:
-          'Problems like "it works on my machine" and race conditions during boot often lead to failed deployments and unexpected downtime.',
-        role: 'DevOps Engineer: Designed the containerization strategy, implemented security practices, and set up Docker Compose orchestration.',
+          'Microservice deployments were fragmented across different tech stacks and build methods, making standardization difficult. Delivery pipelines lacked centralization for security checks and release governance, while ununified logs and metrics slowed down troubleshooting.',
+        role: 'DevOps Engineer: Designed and implemented the end-to-end DevOps architecture for CBS microservices with a focus on automation, standardization, and observability.',
         solution:
-          'I wrote a production-ready Dockerfile using a non-root user to minimize image size and harden security. Using Docker Compose, I set up healthchecks (`pg_isready`) so the app waits for the database to be ready before starting. Configurations and credentials were separated using `.env` files and isolated bridge networks.',
+          'I standardized container packaging across Go, Java, Node.js, and frontend apps with secure Docker builds, then built a centralized GitLab CI/CD pipeline with SAST, image scanning, and release approval gates. I adopted a GitOps workflow with Helm charts for Kubernetes deployments, and configured observability tools using Prometheus, Grafana, Loki, OpenTelemetry, and Grafana Beyla for unified metrics and logging.',
         result:
-          'The app now starts reliably in both local and production environments. Race conditions during boot are gone because the database has to pass a healthcheck before the app comes up. Secrets and config stay out of the image entirely, managed through `.env` files and isolated networks.',
+          'Before this, deploying a new version of one service could take most of a day, involve several people, and still result in something being out of sync. After the full CI/CD and GitOps setup, releases went from ad-hoc manual handoffs to automated, reviewed, and auditable deploys. Manual deployment effort dropped by 60%, release cycles sped up by 35%, and the observability stack that provides high visibility and streamlines root cause identification, enabling faster and more efficient incident resolution while reducing Mean Time to Resolution (MTTR) by nearly 50%',
       },
     ],
   },
