@@ -242,7 +242,7 @@ export const en = {
         solution:
           'I standardized container packaging across Go, Java, Node.js, and frontend apps with secure Docker builds, then built a centralized GitLab CI/CD pipeline with SAST, image scanning, and release approval gates. I adopted a GitOps workflow with Helm charts for Kubernetes deployments, and configured observability tools using Prometheus, Grafana, Loki, OpenTelemetry, and Grafana Beyla for unified metrics and logging.',
         result:
-          'Before this, deploying a new version of one service could take most of a day, involve several people, and still result in something being out of sync. After the full CI/CD and GitOps setup, releases went from ad-hoc manual handoffs to automated, reviewed, and auditable deploys. Manual deployment effort dropped by 60%, release cycles sped up by 35%, and the observability stack that provides high visibility and streamlines root cause identification, enabling faster and more efficient incident resolution while reducing Mean Time to Resolution (MTTR) by nearly 50%',
+          'With a single GitLab CI/CD pipeline handling everything from build to release, release lead time (the time from code commit to production deployment) dropped by 60%. Each stage runs shift-left security scans and requires an approval gate before anything moves forward. Helm and GitOps solved the consistency problem: every environment pulls its config from Git, so staging and production stay in sync without any manual reconciliation. On the monitoring side, Prometheus, Grafana Beyla, and Loki meant that by the time an incident was reported, the data was already there. Diagnosing it was a matter of reading a dashboard, and MTTR dropped by 50%.',
       },
     ],
   },
