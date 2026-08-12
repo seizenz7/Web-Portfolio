@@ -219,7 +219,7 @@ export const id: Translations = {
           'Codebase sudah berkembang jadi beberapa microservices (frontend, API gateway, autentikasi, analitik) dan di satu titik saya menyadari bahwa proses deployment-lah yang jadi bagian paling lemah. Setiap orang push perubahan dengan caranya sendiri. Tidak ada versioning yang konsisten, tidak ada sumber kebenaran tunggal. Cluster selalu berjarak satu hotfix manual dari kondisi yang tidak sinkron dengan Git. Saya tahu kami perlu berhenti mengandalkan pipeline untuk push dan mulai membiarkan Git yang menentukan kondisi produksi.',
         problem:
           'Pipeline CI/CD tradisional sering memerlukan akses tulis langsung ke cluster Kubernetes, yang menimbulkan risiko keamanan. Masalah lainnya adalah perbedaan antara kode dan server hidup yang terjadi ketika teknisi melakukan perbaikan kilat langsung ke cluster tanpa melalui Git. Ketidaksesuaian ini mengubah pemulihan bencana menjadi masalah yang sulit diprediksi.',
-        role: 'DevOps Engineer: Merancang pipeline CI/CD terpusat, membuat Helm charts, dan menerapkan deployment GitOps berbasis pull dengan ArgoCD untuk memastikan sinkronisasi berkelanjutan.',
+        role: 'DevOps Engineer: Merancang pipeline CI/CD terpusat, membuat Helm charts, dan menerapkan deployment GitOps berbasis pull dengan  untuk memastikan sinkronisasi berkelanjutan.',
         solution:
           'Saya membangun pipeline tunggal di GitLab CI/CD dengan Semantic Release sehingga semua microservices berbagi sistem pembuatan versi yang sama. Daripada mendorong (push) perubahan ke server, saya menggunakan pendekatan pull dengan ArgoCD yang memantau repository berisi Helm charts. ArgoCD bertindak sebagai pusat kebenaran dan memanfaatkan fitur Auto-Sync serta Self-Heal untuk memastikan cluster Kubernetes selalu selaras dengan kode di Git.',
         result:
@@ -273,7 +273,7 @@ export const id: Translations = {
       {
         question: 'Proyek yang Paling Representatif',
         answer:
-          'Proyek End-to-End DevOps & Observability for Core Banking System (CBS) adalah proyek yang paling mewakili kemampuan saya. Proyek ini mengintegrasikan seluruh rantai teknologi DevOps modern mulai dari otomatisasi CI/CD, GitOps berbasis Helm & ArgoCD, pemindaian DevSecOps (SonarQube & Trivy), hingga observabilitas mendalam dengan Prometheus, Grafana, Loki, dan eBPF (Grafana Beyla).',
+          'Proyek End-to-End DevOps & Observability for Core Banking System (CBS) adalah proyek yang paling mewakili kemampuan saya. Proyek ini mengintegrasikan seluruh rantai teknologi DevOps modern mulai dari otomatisasi CI/CD, GitOps berbasis Helm, pemindaian DevSecOps (SonarQube & Trivy), hingga observabilitas mendalam dengan Prometheus, Grafana, Loki, dan eBPF (Grafana Beyla).',
       },
       {
         question: 'Keahlian yang Paling Berkembang',
