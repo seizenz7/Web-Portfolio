@@ -39,7 +39,7 @@ export const id: Translations = {
     greeting: 'Selamat datang di portofolio',
     title: 'DevOps Engineer',
     tagline:
-      'Membangun infrastruktur yang andal dan mempercepat proses software delivery melalui sistem yang otomatis, konsisten, dan mudah dikelola. Jelajahi proyek dan keahlian saya.',
+      'Membangun infrastruktur yang andal dan mempercepat proses software delivery melalui sistem yang otomatis, konsisten, dan mudah dikelola.',
     quickNav: [
       {
         label: 'Tentang Saya',
