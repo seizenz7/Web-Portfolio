@@ -60,8 +60,8 @@ export const en = {
       whoIAm: {
         title: 'Who I Am',
         body: [
-          "Hi, I'm Aditya Indra Wisnu a fresh Informatics graduate and DevOps Engineering enthusiast. My journey into the world of DevOps started from my curiosity. I joined an online course and Bootcamp to understand how real-world systems are deployed, monitored, and scaled. Without formal work experience, I've relied on hands-on experimentation, spinning up Kubernetes clusters, designing CI/CD pipelines, and automating infrastructure to build practical skills that mirror industry demands.",
-          "I'm deeply passionate about automation, CI/CD engineering, container orchestration, and Infrastructure as Code. My goal is to become a professional DevOps Engineer who bridges the gap between development and operations, ensuring that software delivery is fast, secure, and reliable. I believe that the best way to learn is by doing - by building, breaking, and tuning. I am also highly interested in building smart systems integrated with AI.",
+          "I am Aditya Indra Wisnu, a DevOps Engineer with a strong passion for automation. I believe that repetitive and manual processes are simply problems waiting to be solved. This conviction drove me to dive deep into the world of DevOps—a practice where a collaborative work culture and automated systems go hand in hand to drive efficiency.",
+          "As a DevOps Engineer, I am committed to bridging the collaboration gap between development and operations to deliver faster, more secure, and highly reliable software. I focus on engineering efficient, standardized, and dependable systems and workflows—ranging from fully automated CI/CD pipelines, infrastructure that can be consistently re-provisioned using an IaC approach, and reproducible deployment processes across all environments, to establishing observability systems that support proactive operations. I believe that an automated and resilient system not only accelerates software delivery but also empowers the team to work with greater focus, innovation, and confidence.",
         ],
       },
       careerGoals: {
@@ -74,7 +74,7 @@ export const en = {
       },
       background: {
         title: 'Background & Experience',
-        body: "I hold a degree in Informatics, providing a rigorous foundation in algorithms and software architecture. To bridge the gap between academic theory and industry practice, I joined specialized online courses and a DevOps bootcamp. Additionally, I've dedicated myself to hands-on engineering through a custom homelab, treating it as a production environment to build real-world infrastructure and CI/CD pipelines.",
+        body: "I hold a Bachelor's degree in Informatics from Universitas Teknologi Yogyakarta, which gave me a strong foundation in algorithms, operating system and the Software Development Life Cycle. Recognizing the gap between academic theory and industry practice, I took concrete steps: completing specialized online courses and a DevOps bootcamp focused on real-world industry standards. From there, I built a personal homelab to put that knowledge into direct practice — standing up local Kubernetes clusters, designing CI/CD pipelines, managing containers, and automating infrastructure provisioning with an IaC-first approach.",
       },
       coreSkills: {
         title: 'Core Technical Skills',

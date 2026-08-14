@@ -63,8 +63,8 @@ export const id: Translations = {
       whoIAm: {
         title: 'Siapa Saya',
         body: [
-          'Halo, saya Aditya Indra Wisnu, seorang lulusan sarjana Informatika dan penggemar DevOps Engineering. Perjalanan saya ke dunia DevOps dimulai dari rasa ingin tahu. Saya mengikuti kursus online dan Bootcamp untuk memahami bagaimana sistem nyata di-deploy, dipantau, dan diskalakan. Tanpa pengalaman kerja formal, saya mengandalkan eksperimentasi langsung dengan membangun cluster Kubernetes lokal, merancang pipeline CI/CD, dan mengotomasi infrastruktur untuk membangun keterampilan praktis yang sesuai dengan kebutuhan industri.',
-          'Saya sangat bersemangat dalam CI/CD engineering, container orchestration, dan Infrastructure as Code. Tujuan saya adalah menjadi DevOps Engineer profesional yang menjembatani kesenjangan antara development dan operations, memastikan pengiriman perangkat lunak yang efisien, cepat, aman, dan andal. Saya percaya bahwa cara terbaik belajar adalah dengan membangun, merusak, dan membangun kembali. Saya juga sangat tertarik membangun sistem cerdas yang terintegrasi dengan AI.',
+          'Saya Aditya Indra Wisnu, seorang DevOps Engineer yang memiliki ketertarikan pada otomatisasi. Saya percaya bahwa proses yang berulang dan manual adalah permasalahan yang menunggu untuk diselesaikan. Ketertarikan itulah yang membawa saya serius mendalami dunia DevOps, sebuah praktik di mana budaya kerja kolaborasi dan sistem yang terotomatisasi berjalan beriringan untuk mencapai efisiensi.',
+          'Sebagai seorang DevOps Engineer, saya berkomitmen untuk menjembatani kolaborasi antara development dan operations guna menghadirkan software delivery yang lebih cepat, aman, dan andal. Saya fokus membangun sistem dan workflow yang efisien, terstandardisasi, dan andal mulai dari pipeline CI/CD yang berjalan sepenuhnya otomatis, infrastruktur yang bisa di-provision ulang secara konsisten dengan pendekatan IaC, proses deployment yang terdokumentasi dan dapat direproduksi di setiap lingkungan, hingga membangun sistem observabilitas untuk mendukung operasional yang lebih proaktif. Saya percaya bahwa sistem yang otomatis dan andal tidak hanya mempercepat software delivery, tetapi juga memungkinkan tim untuk bekerja dengan lebih fokus dan percaya diri.',
         ],
       },
       careerGoals: {
@@ -77,7 +77,7 @@ export const id: Translations = {
       },
       background: {
         title: 'Latar Belakang & Pengalaman',
-        body: 'Saya memiliki background pendidikan sarjana informatika yang memberikan fondasi kuat dalam algoritma dan arsitektur perangkat lunak. Untuk menjembatani kesenjangan antara teori akademis dan praktik industri, saya mengikuti kursus online khusus dan bootcamp DevOps. Selain itu, saya mendedikasikan diri pada rekayasa hands-on melalui homelab, memperlakukannya sebagai lingkungan produksi untuk membangun infrastruktur nyata dan pipeline CI/CD.',
+        body: 'Saya meraih gelar S1 Informatika dari Universitas Teknologi Yogyakarta, yang memberi saya fondasi kuat dalam algoritma, sistem operasi, dan silkus proses pengembangan perangkat lunak. Saya menyadari adanya kesenjangan antara teori akademis dan praktik industri, untuk mengatasi hal tersebut saya mengikuti kursus online dan bootcamp DevOps Engineer yang berfokus pada praktik standar industri nyata. Dari sana, saya membangun homelab pribadi sebagai lingkungan eksperimen untuk menerapkan apa yang dipelajari secara langsung, mulai dari membangun cluster Kubernetes lokal, merancang pipeline CI/CD, mengelola container, hingga mengotomasi provisioning infrastruktur dengan pendekatan IaC.',
       },
       coreSkills: {
         title: 'Keahlian Teknis Utama',
