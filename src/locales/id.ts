@@ -283,7 +283,7 @@ export const id: Translations = {
       {
         question: 'Rencana Pertumbuhan ke Depan',
         answer:
-          'Ke depannya, saya ingin mendalami integrasi AI untuk otomatisasi operasional (AIOps), Advanced Security (DevSecOps), serta Service Mesh (Istio). Saya juga membidik sertifikasi profesional seperti AWS Certified DevOps Engineer - Professional untuk memvalidasi pengetahuan praktis saya.',
+          'Memperdalam Infrastructure as Code untuk provisioning yang lebih cepat dan terukur. Mengembangkan observability yang lebih proaktif melalui alerting, analisis performa, dan tren. Memperkuat keamanan pada CI/CD pipeline, container image, serta konfigurasi infrastructure. Membuat automation yang lebih modular, reproducible, dan skalable. Saya juga membidik sertifikasi profesional seperti AWS Certified DevOps Engineer - Professional untuk memvalidasi pengetahuan praktis saya.',
       },
       {
         question: 'Mengapa Portofolio Ini Penting',

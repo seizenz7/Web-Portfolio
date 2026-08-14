@@ -275,12 +275,12 @@ export const en = {
       {
         question: 'Most Improved Skill',
         answer:
-          'My systematic troubleshooting and observability analysis improved the most. Configuring real-time metrics and distributed tracing with OpenTelemetry and eBPF gave me deep insights into container performance and system reliability.',
+          'The most significant skill growth I have experienced spans CI/CD pipeline automation, GitOps practices, and system observability. Designing declarative Helm-based deployments, combined with real-time metrics and log monitoring using OpenTelemetry and Grafana Beyla, has sharpened my operational analytical instincts. This combination has made me considerably more agile and confident, both in maintaining release consistency and when performing Root Cause Analysis (RCA) on complex infrastructure issues.',
       },
       {
         question: 'Future Growth Plan',
         answer:
-          'Looking forward, my plan is to learn more about AI integration for operational automation (AIOps), advanced security (DevSecOps), and Service Mesh architecture (Istio). In addition, I am also targeting professional certifications, such as the AWS Certified DevOps Engineer - Professional, to validate my practical knowledge.',
+          'Deepening my Infrastructure as Code expertise for faster and more scalable provisioning. Developing more proactive observability through alerting, performance analysis, and trend monitoring. Strengthening security across CI/CD pipelines, container images, and infrastructure configurations. Building more modular, reproducible, and scalable automation. I am also targeting professional certifications such as the AWS Certified DevOps Engineer - Professional to validate my practical knowledge.',
       },
       {
         question: 'Why This Portfolio Matters',
