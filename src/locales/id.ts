@@ -278,7 +278,7 @@ export const id: Translations = {
       {
         question: 'Keahlian yang Paling Berkembang',
         answer:
-          'Keahlian saya dalam analisis sistem, troubleshooting, dan observabilitas meningkat pesat. Membangun pipeline terintegrasi serta memantau metrik dan trace secara real-time menggunakan OpenTelemetry & eBPF membuat saya jauh lebih percaya diri dalam mendiagnosis masalah infrastruktur kompleks.',
+          'Perkembangan keahlian paling signifikan yang saya alami mencakup otomatisasi pipeline CI/CD, praktik GitOps, dan observabilitas sistem. Pengalaman merancang deployment deklaratif berbasis Helm, yang dipadukan dengan pemantauan metrik dan log secara real-time menggunakan OpenTelemetry dan Grafana Beyla, telah menajamkan insting analitis operasional saya. Kombinasi keahlian ini membuat saya jauh lebih tangkas dan percaya diri, baik dalam menjaga konsistensi rilis aplikasi maupun saat melakukan Root Cause Analysis (RCA) pada isu infrastruktur yang kompleks.',
       },
       {
         question: 'Rencana Pertumbuhan ke Depan',
