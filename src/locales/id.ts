@@ -90,7 +90,7 @@ export const id: Translations = {
     sectionTag: 'Personal Branding',
     sectionTitle: 'Pemetaan Strategis Karier dan Kompetensi',
     sectionDescription:
-      'Sebelum menjelajahi implementasi teknis, membangun identitas profesional yang jelas sangatlah penting. Bagian ini mendefinisikan trajektori karir, keahlian inti, minat bidang, dan nilai-nilai fundamental yang mendorong pekerjaan saya.',
+      'Sebelum menjelajahi implementasi teknis, membangun identitas profesional yang jelas sangatlah penting. Bagian ini mendefinisikan trajektori karir, keahlian inti, minat, dan nilai-nilai fundamental yang mendorong pekerjaan saya.',
     cards: [
       {
         title: 'Target Peran / Karir',
@@ -100,17 +100,17 @@ export const id: Translations = {
       {
         title: 'Keahlian Utama',
         description:
-          'Merancang alur kerja CI/CD, mengelola platform Docker & Kubernetes, dan mengotomasi infrastruktur dengan Linux dan scripting (Bash, Python).',
+          'Merancang pipeline CI/CD otomatis, mengelola platform Docker & Kubernetes, menerapkan praktik GitOps dan Infrastructure as Code (IaC), membangun sistem observabilitas yang komprehensif, serta mengotomatisasi pekerjaan yang repetitif.',
       },
       {
         title: 'Kekuatan Utama',
         description:
-          'Pola pikir otomasi yang kuat menghilangkan pekerjaan manual, membangun proses yang dapat diulang, dan terus meningkatkan pipeline pengiriman.',
+          'Memiliki pola pikir automation-first yang kuat untuk mengeliminasi pekerjaan manual, membangun proses operasional yang reproducible, dan secara berkelanjutan mengoptimalkan efisiensi pipeline software delivery',
       },
       {
         title: 'Minat dan Fokus',
         description:
-          'Teknologi cloud-native, arsitektur Microservices, DevSecOps, dan AIOps untuk membangun dan mengoperasikan sistem yang andal, aman, skalabel, serta mendukung otomatisasi operasional.',
+          'Arsitektur cloud-native dan microservices dengan standar DevSecOps serta integrasi AI untuk membangun sistem operasional yang andal, cerdas dan otomatis.',
       },
       {
         title: 'Nilai yang Dijunjung Tinggi',
@@ -273,7 +273,7 @@ export const id: Translations = {
       {
         question: 'Proyek yang Paling Representatif',
         answer:
-          'Proyek End-to-End DevOps & Observability for Core Banking System (CBS) adalah proyek yang paling mewakili kemampuan saya. Proyek ini mengintegrasikan seluruh rantai teknologi DevOps modern mulai dari otomatisasi CI/CD, GitOps berbasis Helm, pemindaian DevSecOps (SonarQube & Trivy), hingga observabilitas mendalam dengan Prometheus, Grafana, Loki, dan eBPF (Grafana Beyla).',
+          'Proyek End-to-End DevOps & Observability for Core Banking Syariah (CBS) adalah proyek yang paling mewakili kemampuan saya. Proyek ini mengintegrasikan seluruh rantai teknologi DevOps modern mulai dari otomatisasi CI/CD, GitOps berbasis Helm, pemindaian DevSecOps (SonarQube & Trivy), hingga observabilitas mendalam dengan Prometheus, Grafana, Loki, dan eBPF (Grafana Beyla).',
       },
       {
         question: 'Keahlian yang Paling Berkembang',

@@ -97,17 +97,17 @@ export const en = {
       {
         title: 'Main Skill',
         description:
-          'Designing CI/CD workflows, managing Docker & Kubernetes platforms, and automating infrastructure with Linux and scripting (Bash, Python).',
+          'Designing automated CI/CD pipelines, managing Docker & Kubernetes platforms, implementing GitOps and Infrastructure as Code (IaC) practices, building comprehensive observability systems, and automating repetitive tasks.',
       },
       {
         title: 'Main Strength',
         description:
-          'Strong automation mindset — eliminating manual toil, building repeatable processes, and continuously improving delivery pipelines.',
+          'A strong automation-first mindset focused on eliminating manual toil, engineering reproducible processes, and continuously optimizing software delivery pipelines.',
       },
       {
         title: 'Field of Interest',
         description:
-          'Cloud-Native technologies, Microservices architecture, DevSecOps, and AIOps for intelligent operations.',
+          'Cloud-native and microservices architectures with DevSecOps standards and AI integration to build reliable, intelligent, and automated operational systems.',
       },
       {
         title: 'Value to Display',
