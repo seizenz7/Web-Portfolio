@@ -36,7 +36,7 @@ export const en = {
     greeting: 'Welcome to the portfolio of',
     title: 'DevOps Engineer',
     tagline:
-      'Building reliable infrastructure through automation, containers, and continuous delivery — explore the projects, skills, and my personal branding.',
+      'Building robust infrastructure and streamlining software delivery through automated, consistent, and easily manageable systems. Explore my projects and skills.',
     quickNav: [
       {
         label: 'Personal Branding',
@@ -66,11 +66,11 @@ export const en = {
       },
       careerGoals: {
         title: 'Career Goals',
-        body: "My short-term goal is to land a Junior DevOps Engineer role where I can apply and expand my homelab experience in a production environment. Long-term, I aspire to become a DevOps Automation Architect, focusing on advanced automation and AI integration to design resilient, scalable, smart and reliable infrastructure.",
+        body: "My short-term goal is to secure a Junior DevOps Engineer role, or a related position, where I can apply my foundational knowledge and homelab experiments to a real-world production environment. Long-term, I aspire to become a DevOps Automation Solution Architect, focusing on advanced automation and AI integration to design resilient, scalable, and intelligent infrastructure.",
       },
       interests: {
         title: 'Interests & Philosophy',
-        body: "I'm fascinated by cloud-native architecture, GitOps workflows, and the integration of AI within the DevSecOps ecosystem. My philosophy is simple: \"Automate the mundane, focus on the meaningful.\" When I'm not configuring pipelines or debugging something, you'll find me exploring open-source tools for DevOps and AIOps, experimenting in my homelab, or reading about AI-driven distributed systems.",
+        body: "I am deeply passionate about cloud-native architecture, GitOps workflows, and AI integration within the DevSecOps ecosystem. My working philosophy is simple: 'Automate the routine, focus on what matters.' When I'm not configuring pipelines or debugging systems, you can find me exploring open-source DevOps and AIOps tools, experimenting in my homelab, or diving into AI-driven distributed systems.",
       },
       background: {
         title: 'Background & Experience',
@@ -265,12 +265,12 @@ export const en = {
       {
         question: 'Biggest Challenge',
         answer:
-          'The main challenge was turning terminal scripts, CI/CD pipelines, and complex observability setups into clear visual narratives that are easy to digest.',
+          'While building the DevOps system felt natural, I found it challenging to structure the written narrative. My main difficulty lay in organizing intricate technical details into a systematic and logical flow of sentences without overlapping ideas.',
       },
       {
         question: 'Most Representative Project',
         answer:
-          'The End-to-End DevOps & Observability for Core Banking System (CBS) project best represents my work. It unifies the entire modern DevOps lifecycle — from CI/CD automation, Helm & ArgoCD GitOps, DevSecOps scanning (SonarQube & Trivy), to full-stack observability with Prometheus, Grafana, Loki, and eBPF (Grafana Beyla).',
+          'The End-to-End DevOps & Observability for Core Banking System (CBS) project best represents my work. It unifies the entire modern DevOps lifecycle from CI/CD automation, Helm & GitOps, DevSecOps scanning (SonarQube & Trivy), to full-stack observability with Prometheus, Grafana, Loki, and eBPF (Grafana Beyla).',
       },
       {
         question: 'Most Improved Skill',
@@ -278,9 +278,9 @@ export const en = {
           'My systematic troubleshooting and observability analysis improved the most. Configuring real-time metrics and distributed tracing with OpenTelemetry and eBPF gave me deep insights into container performance and system reliability.',
       },
       {
-        question: 'Areas for Future Growth',
+        question: 'Future Growth Plan',
         answer:
-          'Looking ahead, I plan to dive deeper into AIOps (AI-driven operational automation), Advanced Cloud & Container Security (CKS), and Service Mesh (Istio). I also aim to earn certifications such as AWS Solutions Architect and CKA to validate my hands-on knowledge.',
+          'Looking forward, my plan is to learn more about AI integration for operational automation (AIOps), advanced security (DevSecOps), and Service Mesh architecture (Istio). In addition, I am also targeting professional certifications, such as the AWS Certified DevOps Engineer - Professional, to validate my practical knowledge.',
       },
       {
         question: 'Why This Portfolio Matters',

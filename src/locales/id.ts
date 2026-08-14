@@ -39,15 +39,15 @@ export const id: Translations = {
     greeting: 'Selamat datang di portofolio',
     title: 'DevOps Engineer',
     tagline:
-      'Membangun infrastruktur yang andal melalui otomasi, container, dan continuous delivery. Jelajahi proyek, keahlian, dan personal branding saya.',
+      'Membangun infrastruktur yang andal dan mempercepat proses software delivery melalui sistem yang otomatis, konsisten, dan mudah dikelola. Jelajahi proyek dan keahlian saya.',
     quickNav: [
       {
-        label: 'Personal Branding',
-        description: 'Arah karir, keahlian, dan nilai-nilai dalam satu tampilan.',
+        label: 'Tentang Saya',
+        description: 'Kenali latar belakang, nilai, dan aspirasi saya.',
       },
       {
         label: 'Showcase Proyek',
-        description: 'Proyek nyata yang dibangun dengan tooling DevOps modern.',
+        description: 'Proyek yang pernah saya kerjakan dengan tooling DevOps modern.',
       },
     ],
     ctaExplore: 'Mulai Eksplorasi',
@@ -69,11 +69,11 @@ export const id: Translations = {
       },
       careerGoals: {
         title: 'Target Karir',
-        body: 'Target jangka pendek saya adalah mendapatkan posisi Junior DevOps Engineer di mana saya dapat menerapkan dan mengembangkan pengalaman pembelajaran dan eksperimen homelab saya di lingkungan produksi. Jangka panjang, saya bercita-cita menjadi DevOps Automation Solution Architect, berfokus pada otomasi lanjutan dan integrasi AI untuk merancang infrastruktur yang tangguh, skalabel, cerdas, dan andal.',
+        body: 'Target jangka pendek saya adalah mendapatkan posisi Junior DevOps Engineer atau posisi yang relevan di mana saya dapat menerapkan dan mengembangkan pengalaman pembelajaran dan eksperimen homelab saya di lingkungan produksi. Jangka panjang, saya bercita-cita menjadi DevOps Automation Solution Architect, berfokus pada otomatisasi tingkat lanjut dan integrasi AI untuk merancang infrastruktur yang tangguh, skalabel, dan cerdas.',
       },
       interests: {
         title: 'Minat & Filosofi',
-        body: 'Saya terpesona oleh arsitektur cloud-native, alur kerja GitOps, dan integrasi AI dalam ekosistem DevSecOps. Filosofi saya sederhana: "Otomasi yang rutin, fokus pada yang bermakna." Ketika tidak sedang mengonfigurasi pipeline atau men-debug sesuatu, saya mengeksplorasi tools open-source untuk DevOps dan AIOps, bereksperimen di homelab, atau membaca tentang sistem terdistribusi berbasis AI.',
+        body: 'Saya sangat antusias dengan arsitektur cloud-native, GitOps, dan implementasi AI pada DevSecOps. Prinsip kerja saya adalah `Otomatisasikan rutinitas, fokus pada inovasi`. Di luar rutinitas merancang pipeline otomatisasi dan troubleshooting infrastruktur, saya aktif mengeksplorasi ekosistem open-source, melakukan eksperimen di homelab, serta mendalami literatur tentang AIOps dan sistem terdistribusi.',
       },
       background: {
         title: 'Latar Belakang & Pengalaman',
@@ -268,7 +268,7 @@ export const id: Translations = {
       {
         question: 'Tantangan Terbesar',
         answer:
-          'Tantangan utamanya adalah mengemas pekerjaan DevOps berupa skrip terminal, pipeline CI/CD, dan observabilitas kompleks ke dalam visualisasi serta narasi teknis yang mudah dipahami oleh audiens.',
+          'Membangun sistem DevOps terasa lebih natural bagi saya dibandingkan dengan keharusan menyusun narasi penjelasannya. Kesulitan utama saya terletak pada bagaimana menyusun detail-detail teknis ke dalam alur penyampaian kalimat yang sistematis dan terstruktur.',
       },
       {
         question: 'Proyek yang Paling Representatif',
@@ -281,9 +281,9 @@ export const id: Translations = {
           'Keahlian saya dalam analisis sistem, troubleshooting, dan observabilitas meningkat pesat. Membangun pipeline terintegrasi serta memantau metrik dan trace secara real-time menggunakan OpenTelemetry & eBPF membuat saya jauh lebih percaya diri dalam mendiagnosis masalah infrastruktur kompleks.',
       },
       {
-        question: 'Area Pertumbuhan ke Depan',
+        question: 'Rencana Pertumbuhan ke Depan',
         answer:
-          'Ke depannya, saya ingin mendalami AIOps (integrasi AI untuk otomatisasi operasional), Advanced Cloud & Container Security (CKS), serta Service Mesh (Istio). Saya juga membidik sertifikasi profesional seperti AWS Certified Solutions Architect dan CKA untuk memvalidasi pengetahuan praktis saya.',
+          'Ke depannya, saya ingin mendalami integrasi AI untuk otomatisasi operasional (AIOps), Advanced Security (DevSecOps), serta Service Mesh (Istio). Saya juga membidik sertifikasi profesional seperti AWS Certified DevOps Engineer - Professional untuk memvalidasi pengetahuan praktis saya.',
       },
       {
         question: 'Mengapa Portofolio Ini Penting',
