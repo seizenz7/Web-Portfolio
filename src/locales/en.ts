@@ -36,7 +36,7 @@ export const en = {
     greeting: 'Welcome to the portfolio of',
     title: 'DevOps Engineer',
     tagline:
-      'Building robust infrastructure and streamlining software delivery through automated, consistent, and easily manageable systems. Explore my projects and skills.',
+      'Building robust infrastructure and streamlining software delivery through automated, consistent, and easily manageable systems.',
     quickNav: [
       {
         label: 'Personal Branding',
